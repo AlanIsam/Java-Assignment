@@ -1,4 +1,4 @@
-// Contributed by AMREEN MUSTAQIM BIN ASLAN: Class structure & constructors
+// Contributed by AMREEN MUSTAQEEM BIN ASLAN: Class structure & constructors
 // Contributed by Danial Naseem Iman (103768): countCharacters(), checkStringValidity()
 
 public class Encoded {
@@ -7,7 +7,7 @@ public class Encoded {
     private String resultText;
     private final String groupID = "G04/SE-G05";
 
-    // Contributed by AMREEN MUSTAQIM BIN ASLAN: Class structure & constructors
+    // Contributed by AMREEN MUSTAQEEM BIN ASLAN: Class structure & constructors
     // Default constructor
     public Encoded() {
         this.inputText = "";
@@ -15,7 +15,7 @@ public class Encoded {
         this.resultText = "";
     }
 
-    // Contributed by AMREEN MUSTAQIM BIN ASLAN: Class structure & constructors
+    // Contributed by AMREEN MUSTAQEEM BIN ASLAN: Class structure & constructors
     public Encoded(String inputText) {
         this.inputText = inputText;
         this.charCount = countCharacters();
@@ -24,7 +24,7 @@ public class Encoded {
 
     // =========================================================
     // GETTERS & SETTERS
-    // Contributed by AMREEN MUSTAQIM BIN ASLAN: Class structure & constructors
+    // Contributed by AMREEN MUSTAQEEM BIN ASLAN: Class structure & constructors
     // =========================================================
 
     public String getInputText() { return inputText; }
@@ -39,7 +39,6 @@ public class Encoded {
     public String getGroupID() { return groupID; }
 
     // =========================================================
-    // END OF AMREEN'S CONTRIBUTION
     // =========================================================
 
     // Contributed by Danial Naseem Iman (103768): countCharacters(), checkStringValidity()
