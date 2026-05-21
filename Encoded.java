@@ -52,6 +52,8 @@ public class Encoded {
         }
         return true;
     }
+
+//Contributed by BARACHELLE ELEAZAR ANAK GANI(103511): Cipher algorithm & shift logic
 //generate a shift value based on the group ID
     public int generateShift() {
         int hash = Math.abs(groupID.hashCode());
