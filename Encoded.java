@@ -53,38 +53,43 @@ public class Encoded {
         return true;
     }
 
-//Contributed by BARACHELLE ELEAZAR ANAK GANI(103511): Cipher algorithm & shift logic
-//generate a shift value based on the group ID
+// Contributed by BARACHELLE ELEAZAR ANAK GANI (103511): Cipher algorithm & shift logic
+
+// Generate shift value using group ID hash
     public int generateShift() {
-        int hash = Math.abs(groupID.hashCode());
-        int shift = (hash % 10) + 1;  
-        return shift; 
+        int rawHash = groupID.hashCode();
+        int positiveHash = Math.abs(rawHash);
+
+        // ensure shift is always between 1 and 10
+        return (positiveHash % 10) + 1;
     }
 
-//calculate the final shift value by adding the character count to the generated shift
+    // Combine dynamic character count with base shift
     public int getFinalShift() {
-        int finalShift = generateShift() + this.charCount;
-        return finalShift; 
+        return generateShift() + this.charCount;
     }
 
+// Core encryption method (handles letters, digits, and preserves other chars)
     public String applyCipher() {
-    
-    int finalShift = getFinalShift();
-    StringBuilder result = new StringBuilder();
+        int shiftValue = getFinalShift();
+        StringBuilder encrypted = new StringBuilder();
 
-    for (int i = 0; i < this.inputText.length(); i++) {        
-        char c = this.inputText.charAt(i); 
-        
-        if (Character.isLowerCase(c)) {
-            result.append((char) ((c - 'a' + finalShift) % 26 + 'a'));
-        } else if (Character.isDigit(c)) {
-            result.append((char) ((c - '0' + finalShift) % 10 + '0'));
-        } else {
-            result.append(c);
+        for (char currentChar : inputText.toCharArray()) {
+            if (Character.isLowerCase(currentChar)) {
+                char shifted = (char) ((currentChar - 'a' + shiftValue) % 26 + 'a');
+                encrypted.append(shifted);
+            } 
+            else if (Character.isDigit(currentChar)) {
+                char shifted = (char) ((currentChar - '0' + shiftValue) % 10 + '0');
+                encrypted.append(shifted);
+            } 
+            else {
+                // keep spaces and symbols unchanged
+                encrypted.append(currentChar);
+            }
         }
-    }
-    
-    this.resultText = result.toString();
-    return this.resultText;
+
+        this.resultText = encrypted.toString();
+        return this.resultText;
     }
 }
