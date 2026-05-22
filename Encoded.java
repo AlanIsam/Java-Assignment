@@ -1,5 +1,6 @@
 // Contributed by AMREEN MUSTAQEEM BIN ASLAN: Class structure & constructors
 // Contributed by Danial Naseem Iman (103768): countCharacters(), checkStringValidity()
+// Contributed by SII JONG MING: Testing & documentation
 
 public class Encoded {
     private String inputText;
