@@ -1,4 +1,5 @@
 // Contributed by ALAN ISAM ANAK RECKY: GUI design & event handling.
+// Contributed by SII JONG MING: Testing & documentation
 
 import javax.swing.*;
 import java.awt.*;
